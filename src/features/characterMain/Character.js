@@ -59,7 +59,7 @@ function Character () {
                         {physSkillKeys.map((skill, index) => (
                             <li key={index}>
                                 <label htmlFor={skill}>{skill}</label>
-                                <input type='number' name={skill} id={skill} onChange={handleChangeSkill}></input>
+                                <input type='number' name={skill} id={skill} onChange={handleChangeSkill} min='0' max='5'></input>
                             </li>
                         ))}
                     </ul>
@@ -68,7 +68,7 @@ function Character () {
                         {mentalSkills.map((skill, index) => (
                             <li key={index}>
                                 <label htmlFor={skill}>{skill}</label>
-                                <input type='number' name={skill} id={skill}></input>
+                                <input type='number' name={skill} id={skill} onChange={handleChangeSkill} min="0" max="5"></input>
                             </li>
                         ))}
                     </ul>
@@ -77,7 +77,7 @@ function Character () {
                         {socialSkills.map((skill, index) => (
                             <li key={index}>
                                 <label htmlFor={skill}>{skill}</label>
-                                <input type='number' name={skill} id={skill}></input>
+                                <input type='number' name={skill} id={skill} onChange={handleChangeSkill} max="5" min="0"></input>
                             </li>
                         ))}
                     </ul>

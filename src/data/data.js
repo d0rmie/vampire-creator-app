@@ -13,7 +13,7 @@ export const disciplinesByClan = {
   Brujah: ['Celerity', 'Potence', 'Presence'],
   Gangrel: ['Animalism', 'Fortitude', 'Protean'],
   Salubri: ['Auspex', 'Dominate', 'Fortitude'],
-  'Thin-blood': ['None'],
+  'Thin-blood': ['Blood Alchemy'],
   Nosferatu: ['Animalism', 'Obfuscate', 'Potence'],
   Caitiff: ['Self-selected'],
   Hecata: ['Auspex', 'Fortitude', 'Oblivion'],

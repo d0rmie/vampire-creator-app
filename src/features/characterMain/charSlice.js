@@ -7,7 +7,7 @@ const initialState = {
   disciplines: [],
   generation: 0,
   attributes: [],
-  skills: []
+  skills: {}
 }
 
 export const charSlice = createSlice({
@@ -30,7 +30,7 @@ export const charSlice = createSlice({
       state.generation = action.payload
     },
     setSkills: (state, action) => {
-      state.skills.push({ name: action.payload.name, value: action.payload.value })
+      state.skills[action.payload.name] = action.payload.value
     },
     setAttributes: (state, action) => {
       state.attributes.push(action.payload)
