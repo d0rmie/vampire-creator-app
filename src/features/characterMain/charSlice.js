@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+// import { physicalSkills } from '../../data/data'
 
 const initialState = {
   firstName: '',
@@ -29,7 +30,7 @@ export const charSlice = createSlice({
       state.generation = action.payload
     },
     setSkills: (state, action) => {
-      state.skills.push(action.payload)
+      state.skills.push({ name: action.payload.name, value: action.payload.value })
     },
     setAttributes: (state, action) => {
       state.attributes.push(action.payload)

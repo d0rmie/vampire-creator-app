@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectFirstName, selectLastName, selectClan, selectGeneration, selectSkills, setFirstName, setLastName, setClan, setGeneration, setDisciplines } from './charSlice'
-import { clanList, disciplinesByClan, socialSkills, mentalSkills } from '../../data/data'
+import { selectFirstName, selectLastName, selectClan, selectGeneration, selectSkills, setFirstName, setLastName, setClan, setGeneration, setDisciplines, setSkills } from './charSlice'
+import { clanList, disciplinesByClan, socialSkills, mentalSkills, physicalSkills } from '../../data/data'
 
 function Character () {
   const dispatch = useDispatch()
@@ -11,6 +11,7 @@ function Character () {
   const generation = useSelector(selectGeneration)
   const charDisciplines = disciplinesByClan[clan]
   const skills = useSelector(selectSkills)
+  const physSkillKeys = Object.keys(physicalSkills)
 
   const changeFirst = (e) => {
     dispatch(setFirstName(e.target.value))
@@ -25,6 +26,10 @@ function Character () {
   const changeGen = (e) => {
     dispatch(setGeneration(e.target.value))
   }
+  const handleChangeSkill = (e) => {
+    dispatch(setSkills({ name: e.target.name, value: e.target.value }))
+    console.log(skills)
+  }
   return (
         <div>
             <h1>This is the character creator!</h1>
@@ -38,7 +43,7 @@ function Character () {
                 ))}
             </ul>}
             <div>
-                {skills}
+
             </div>
             <div>
                 <label htmlFor='fname'>First Name:</label>
@@ -49,7 +54,15 @@ function Character () {
                 <label htmlFor='gen'>Generation</label>
                 <input type="number" id="gen" name="gen" onChange={changeGen}></input>
                 <div className="skillHolder">
-
+                <h3>Physical Skills!</h3>
+                    <ul>
+                        {physSkillKeys.map((skill, index) => (
+                            <li key={index}>
+                                <label htmlFor={skill}>{skill}</label>
+                                <input type='number' name={skill} id={skill} onChange={handleChangeSkill}></input>
+                            </li>
+                        ))}
+                    </ul>
                     <h3>Mental Skills!</h3>
                     <ul>
                         {mentalSkills.map((skill, index) => (
