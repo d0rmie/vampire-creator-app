@@ -12,6 +12,8 @@ function Character () {
   const charDisciplines = disciplinesByClan[clan]
   const skills = useSelector(selectSkills)
   const physSkillKeys = Object.keys(physicalSkills)
+  const mentalSkillsKeys = Object.keys(mentalSkills)
+  const socialSkillsKeys = Object.keys(socialSkills)
 
   const changeFirst = (e) => {
     dispatch(setFirstName(e.target.value))
@@ -65,7 +67,7 @@ function Character () {
                     </ul>
                     <h3>Mental Skills!</h3>
                     <ul>
-                        {mentalSkills.map((skill, index) => (
+                        {mentalSkillsKeys.map((skill, index) => (
                             <li key={index}>
                                 <label htmlFor={skill}>{skill}</label>
                                 <input type='number' name={skill} id={skill} onChange={handleChangeSkill} min="0" max="5"></input>
@@ -74,7 +76,7 @@ function Character () {
                     </ul>
                     <h3>Social Skills!</h3>
                     <ul>
-                        {socialSkills.map((skill, index) => (
+                        {socialSkillsKeys.map((skill, index) => (
                             <li key={index}>
                                 <label htmlFor={skill}>{skill}</label>
                                 <input type='number' name={skill} id={skill} onChange={handleChangeSkill} max="5" min="0"></input>
@@ -84,6 +86,14 @@ function Character () {
                 </div>
                 {charDisciplines && <div>
                     {/* fill in with disciplines when possible */}
+                    <ul>
+                        {charDisciplines.map((discipline, index) => (
+                            <li key={index}>
+                                <label htmlFor={`${discipline}`}>{discipline}</label>
+                                <input type="number" name={`${discipline}`} id={`${discipline}`} max="5" min="0"></input>
+                            </li>
+                        ))}
+                    </ul>
                     </div>}
             </div>
             <ul className="clanList">

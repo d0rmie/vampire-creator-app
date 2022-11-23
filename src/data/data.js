@@ -4,9 +4,9 @@ export const clanList = [{ name: 'Banu Haqim', description: 'Judges capable of s
 
 export const physicalSkills = { athletics: 0, brawl: 0, drive: 0, firearms: 0, larceny: 0, stealth: 0, survival: 0, weaponry: 0 }
 
-export const mentalSkills = ['academics', 'computer', 'crafts', 'investigation', 'medicine', 'occult', 'politics', 'science']
+export const mentalSkills = { academics: 0, computer: 0, crafts: 0, investigation: 0, medicine: 0, occult: 0, politics: 0, science: 0 }
 
-export const socialSkills = ['animal ken', 'empathy', 'expression', 'intimidation', 'persuasion', 'socialize', 'streetwise', 'subterfuge']
+export const socialSkills = { 'animal ken': 0, empathy: 0, expression: 0, intimidation: 0, persuasion: 0, socialize: 0, streetwise: 0, subterfuge: 0 }
 
 export const disciplinesByClan = {
   'Banu Haqim': ['Thaumaturgy', 'Celerity', 'Obfuscate'],
@@ -26,3 +26,21 @@ export const disciplinesByClan = {
   Ravnos: ['Obfuscate', 'Animalism', 'Presence'],
   Toreador: ['Auspex', 'Celerity', 'Presence']
 }
+/* export const disciplinesByClan = {
+  'Banu Haqim': [{ Thaumaturgy: 0 }, { Celerity: 0 }, { Obfuscate: 0 }],
+  Brujah: [{ Celerity: 0 }, { Potence: 0 }, { Presence: 0 }],
+  Gangrel: [{ Animalism: 0 }, { Fortitude: 0 }, { Protean: 0 }],
+  Salubri: [{ Auspex: 0 }, { Dominate: 0 }, { Fortitude: 0 }],
+  'Thin-blood': [{ 'Blood Alchemy': 0 }],
+  Nosferatu: [{ Animalism: 0 }, { Obfuscate: 0 }, { Potence: 0 }],
+  Caitiff: [{ 'Self-selected': 0 }],
+  Hecata: [{ Auspex: 0 }, { Fortitude: 0 }, { Oblivion: 0 }],
+  Malkavian: [{ Dementation: 0 }, { Auspex: 0 }, { Obfuscate: 0 }],
+  Tremere: [{ Dominate: 0 }, { Auspex: 0 }, { Thaumaturgy: 0 }],
+  Lasombra: [{ Dominate: 0 }, { Oblivion: 0 }, { Potence: 0 }],
+  Tzimisce: [{ Animalism: 0 }, { Dominate: 0 }, { Protean: 0 }],
+  Ventrue: [{ Dominate: 0 }, { Fortitude: 0 }, { Presence: 0 }],
+  'The Ministry/Setites': [{ Obfuscate: 0 }, { Presence: 0 }, { Protean: 0 }],
+  Ravnos: [{ Obfuscate: 0 }, { Animalism: 0 }, { Presence: 0 }],
+  Toreador: [{ Auspex: 0 }, { Celerity: 0 }, { Presence: 0 }]
+} */
