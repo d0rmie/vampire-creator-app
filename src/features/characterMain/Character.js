@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectFirstName, selectLastName, selectClan, selectGeneration, selectSkills, setFirstName, setLastName, setClan, setGeneration, setDisciplines, setSkills } from './charSlice'
+import { selectFirstName, selectLastName, selectClan, selectGeneration, selectSkills, selectDisciplines, setFirstName, setLastName, setClan, setGeneration, setDisciplines, setDisciplineValue, setSkills } from './charSlice'
 import { clanList, disciplinesByClan, socialSkills, mentalSkills, physicalSkills } from '../../data/data'
 
 function Character () {
@@ -11,6 +11,8 @@ function Character () {
   const generation = useSelector(selectGeneration)
   const charDisciplines = disciplinesByClan[clan]
   const skills = useSelector(selectSkills)
+  const disciplineObject = useSelector(selectDisciplines)
+
   const physSkillKeys = Object.keys(physicalSkills)
   const mentalSkillsKeys = Object.keys(mentalSkills)
   const socialSkillsKeys = Object.keys(socialSkills)
@@ -24,6 +26,7 @@ function Character () {
   const clickClan = (e) => {
     dispatch(setClan(e.target.value))
     dispatch(setDisciplines(charDisciplines))
+    console.log(disciplineObject)
   }
   const changeGen = (e) => {
     dispatch(setGeneration(e.target.value))
@@ -31,6 +34,10 @@ function Character () {
   const handleChangeSkill = (e) => {
     dispatch(setSkills({ name: e.target.name, value: e.target.value }))
     console.log(skills)
+  }
+  const handleDisciplineChange = (e) => {
+    dispatch(setDisciplineValue({ name: e.target.name, value: e.target.value }))
+    console.log(disciplineObject)
   }
   return (
         <div>
@@ -90,7 +97,7 @@ function Character () {
                         {charDisciplines.map((discipline, index) => (
                             <li key={index}>
                                 <label htmlFor={`${discipline}`}>{discipline}</label>
-                                <input type="number" name={`${discipline}`} id={`${discipline}`} max="5" min="0"></input>
+                                <input type="number" name={`${discipline}`} id={`${discipline}`} max="5" min="0" onChange={handleDisciplineChange}></input>
                             </li>
                         ))}
                     </ul>

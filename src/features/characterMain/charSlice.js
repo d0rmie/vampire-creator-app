@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   firstName: '',
   clan: '',
-  disciplines: [],
+  disciplines: {},
   generation: 0,
   attributes: [],
   skills: {}
@@ -22,9 +22,18 @@ export const charSlice = createSlice({
     },
     setClan: (state, action) => {
       state.clan = action.payload
+      state.skills = {}
+      state.attributes = []
     },
     setDisciplines: (state, action) => {
-      state.disciplines = action.payload
+      // state.disciplines = action.payload
+      state.disciplines = {}
+      action.payload.map(discipline => (
+        state.disciplines[discipline] = 0
+      ))
+    },
+    setDisciplineValue: (state, action) => {
+      state.disciplines[action.payload.name] = action.payload.value
     },
     setGeneration: (state, action) => {
       state.generation = action.payload
@@ -33,7 +42,7 @@ export const charSlice = createSlice({
       state.skills[action.payload.name] = action.payload.value
     },
     setAttributes: (state, action) => {
-      state.attributes.push(action.payload)
+      state.attributes[action.payload.name] = action.payload.value
     }
   }
 })
@@ -46,6 +55,6 @@ export const selectGeneration = (state) => state.character.generation
 export const selectSkills = (state) => state.character.skills
 export const selectAttributes = (state) => state.character.attributes
 
-export const { setFirstName, setLastName, setClan, setGeneration, setSkills, setAttributes, setDisciplines } = charSlice.actions
+export const { setFirstName, setLastName, setClan, setGeneration, setSkills, setAttributes, setDisciplines, setDisciplineValue } = charSlice.actions
 
 export default charSlice.reducer
