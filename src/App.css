@@ -2,3 +2,31 @@
   display:flex;
   flex-direction:row;
 }
+.skillHolder ul {
+  list-style-type:none;
+}
+.clanListItem {
+  display:flex;
+  flex-direction:column;
+  align-items:baseline;
+  row-gap:20px;
+}
+.clanList ul {
+  list-style-type:none;
+}
+.clanImgContainer {
+  flex-grow:1;
+  flex-shrink:3;
+}
+.clanImgContainer img {
+  max-width:120px;
+  height:auto;
+}
+.clanList {
+  display:flex;
+  flex-flow:wrap;
+  width:100%;
+  gap:10px;
+  list-style-type:none;
+  column-gap:30px;
+}

@@ -82,13 +82,19 @@ function Character () {
                         ))}
                     </ul>
                 </div>
+                {charDisciplines && <div>
+                    {/* fill in with disciplines when possible */}
+                    </div>}
             </div>
-            <ul>
+            <ul className="clanList">
                 {clanList.map((clan, index) => (
                     <li key={index}>
-                        <div>
+                        <div className="clanListItem">
+                            <div>
                             <h3>{clan.name}</h3>
                             <p>{clan.description}</p>
+                            <div className="clanImgContainer"><img src={clan.img}></img></div>
+                            </div>
                             <ul>
                                 {disciplinesByClan[clan.name].map((discipline, index) => (
                                     <li key={index}>{discipline}</li>
