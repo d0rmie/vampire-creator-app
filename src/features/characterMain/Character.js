@@ -115,6 +115,7 @@ function Character () {
                     </ul>
                 </div>
                 <div className="skillHolder">
+                <div className="physHolder">
                 <h3>Physical Skills!</h3>
                     <ul>
                         {physSkillKeys.map((skill, index) => (
@@ -124,6 +125,8 @@ function Character () {
                             </li>
                         ))}
                     </ul>
+                    </div>
+                    <div className="mentalHolder">
                     <h3>Mental Skills!</h3>
                     <ul>
                         {mentalSkillsKeys.map((skill, index) => (
@@ -133,6 +136,8 @@ function Character () {
                             </li>
                         ))}
                     </ul>
+                    </div>
+                    <div className="socialHolder">
                     <h3>Social Skills!</h3>
                     <ul>
                         {socialSkillsKeys.map((skill, index) => (
@@ -142,6 +147,7 @@ function Character () {
                             </li>
                         ))}
                     </ul>
+                    </div>
                 </div>
                 {charDisciplines && <div>
                     {/* fill in with disciplines when possible */}

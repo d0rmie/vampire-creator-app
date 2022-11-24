@@ -30,21 +30,3 @@ export const disciplinesByClan = {
   Ravnos: ['Obfuscate', 'Animalism', 'Presence'],
   Toreador: ['Auspex', 'Celerity', 'Presence']
 }
-/* export const disciplinesByClan = {
-  'Banu Haqim': [{ Thaumaturgy: 0 }, { Celerity: 0 }, { Obfuscate: 0 }],
-  Brujah: [{ Celerity: 0 }, { Potence: 0 }, { Presence: 0 }],
-  Gangrel: [{ Animalism: 0 }, { Fortitude: 0 }, { Protean: 0 }],
-  Salubri: [{ Auspex: 0 }, { Dominate: 0 }, { Fortitude: 0 }],
-  'Thin-blood': [{ 'Blood Alchemy': 0 }],
-  Nosferatu: [{ Animalism: 0 }, { Obfuscate: 0 }, { Potence: 0 }],
-  Caitiff: [{ 'Self-selected': 0 }],
-  Hecata: [{ Auspex: 0 }, { Fortitude: 0 }, { Oblivion: 0 }],
-  Malkavian: [{ Dementation: 0 }, { Auspex: 0 }, { Obfuscate: 0 }],
-  Tremere: [{ Dominate: 0 }, { Auspex: 0 }, { Thaumaturgy: 0 }],
-  Lasombra: [{ Dominate: 0 }, { Oblivion: 0 }, { Potence: 0 }],
-  Tzimisce: [{ Animalism: 0 }, { Dominate: 0 }, { Protean: 0 }],
-  Ventrue: [{ Dominate: 0 }, { Fortitude: 0 }, { Presence: 0 }],
-  'The Ministry/Setites': [{ Obfuscate: 0 }, { Presence: 0 }, { Protean: 0 }],
-  Ravnos: [{ Obfuscate: 0 }, { Animalism: 0 }, { Presence: 0 }],
-  Toreador: [{ Auspex: 0 }, { Celerity: 0 }, { Presence: 0 }]
-} */

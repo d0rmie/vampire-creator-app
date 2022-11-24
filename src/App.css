@@ -1,6 +1,28 @@
+html {
+  font-size:10px;
+}
+.App {
+  background-color:black;
+  color:red;
+  font-weight:bold;
+  font-size: calc(1rem + 1vw)
+}
 .skillHolder {
   display:flex;
   flex-direction:row;
+}
+.physHolder {
+  display:flex;
+  flex-direction:column;
+
+}
+.mentalHolder {
+  display:flex;
+  flex-direction:column;
+}
+.socialHolder {
+  display:flex;
+  flex-direction:column;
 }
 .skillHolder ul {
   list-style-type:none;

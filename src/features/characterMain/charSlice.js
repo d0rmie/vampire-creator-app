@@ -39,11 +39,9 @@ export const charSlice = createSlice({
     setDisciplineValue: (state, action) => {
       const disciplineLimit = 4
       const totalDisciplineArr = Object.values(state.disciplines)
-      console.log(totalDisciplineArr)
       const initialValue = 0
       const currentDisciplineLevel = totalDisciplineArr.reduce((acc, currentValue) => Number(acc) + Number(currentValue), initialValue)
       if (disciplineLimit >= currentDisciplineLevel || state.disciplines[action.payload.name] > action.payload.value) {
-        console.log(state.disciplines[action.payload.name])
         state.disciplines[action.payload.name] = action.payload.value
       }
     },
