@@ -7,9 +7,29 @@ html {
   font-weight:bold;
   font-size: calc(1rem + 1vw)
 }
+.baseInfo {
+  display:flex;
+  flex-direction:column;
+}
+.AttrHolder {
+  display:flex;
+  flex-direction:row;
+  column-gap:35px;
+}
+.attributesList {
+ display:flex;
+ flex-direction:column;
+}
+.attributesList ul {
+  list-style-type:none;
+}
+.disciplineList {
+  list-style-type:none;
+}
 .skillHolder {
   display:flex;
   flex-direction:row;
+  column-gap:35px;
 }
 .physHolder {
   display:flex;

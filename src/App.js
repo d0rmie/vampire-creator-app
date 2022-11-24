@@ -1,13 +1,14 @@
 import React from 'react'
 import Character from './features/characterMain/Character'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import './App.css'
 // Should return the standalone component
 function App () {
   return (
-    <div className="App">
-      <Character/>
-    </div>
+    <Router>
+      <Character />
+    </Router>
   )
 }
 
