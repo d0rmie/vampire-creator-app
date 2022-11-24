@@ -37,16 +37,36 @@ export const charSlice = createSlice({
       ))
     },
     setDisciplineValue: (state, action) => {
-      state.disciplines[action.payload.name] = action.payload.value
+      const disciplineLimit = 4
+      const totalDisciplineArr = Object.values(state.disciplines)
+      console.log(totalDisciplineArr)
+      const initialValue = 0
+      const currentDisciplineLevel = totalDisciplineArr.reduce((acc, currentValue) => Number(acc) + Number(currentValue), initialValue)
+      if (disciplineLimit >= currentDisciplineLevel || state.disciplines[action.payload.name] > action.payload.value) {
+        console.log(state.disciplines[action.payload.name])
+        state.disciplines[action.payload.name] = action.payload.value
+      }
     },
     setGeneration: (state, action) => {
       state.generation = action.payload
     },
     setSkills: (state, action) => {
-      state.skills[action.payload.name] = action.payload.value
+      const skillLimit = 19
+      const totalSkillsArr = Object.values(state.skills)
+      const initialValue = 0
+      const currentSkillLevel = totalSkillsArr.reduce((acc, currentValue) => Number(acc) + Number(currentValue), initialValue)
+      if (skillLimit > currentSkillLevel || state.skills[action.payload.name] > action.payload.value) {
+        state.skills[action.payload.name] = action.payload.value
+      }
     },
     setAttributes: (state, action) => {
-      state.attributes[action.payload.name] = action.payload.value
+      const attributeLimit = 22
+      const totalAttsArr = Object.values(state.attributes)
+      const initialValue = 0
+      const currentAttributeLevel = totalAttsArr.reduce((acc, currentValue) => Number(acc) + Number(currentValue), initialValue)
+      if (attributeLimit >= currentAttributeLevel || state.attributes[action.payload.name] > action.payload.value) {
+        state.attributes[action.payload.name] = action.payload.value
+      }
     },
     setSavedCharacters: (state) => {
       state.savedCharacters.push({
