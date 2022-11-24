@@ -1,74 +1,99 @@
 html {
-  font-size:10px;
-}
-.App {
+  font-size: 10px;
   background-color:black;
-  color:red;
-  font-weight:bold;
+}
+
+#root {
+  background-color: black;
+}
+
+.App {
+  background-color: black;
+  color: red;
+  font-weight: bold;
   font-size: calc(1rem + 1vw)
 }
+
 .baseInfo {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
 }
+
 .AttrHolder {
-  display:flex;
-  flex-direction:row;
-  column-gap:35px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 35px;
 }
+
 .attributesList {
- display:flex;
- flex-direction:column;
+  display: flex;
+  flex-direction: column;
 }
+
 .attributesList ul {
-  list-style-type:none;
+  list-style-type: none;
 }
+
 .disciplineList {
-  list-style-type:none;
+  list-style-type: none;
 }
+
 .skillHolder {
-  display:flex;
-  flex-direction:row;
-  column-gap:35px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 35px;
 }
+
 .physHolder {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
 
 }
+
 .mentalHolder {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
 }
+
 .socialHolder {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
 }
+
 .skillHolder ul {
-  list-style-type:none;
+  list-style-type: none;
 }
+
 .clanListItem {
-  display:flex;
-  flex-direction:column;
-  align-items:baseline;
-  row-gap:20px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  row-gap: 20px;
 }
+
 .clanList ul {
-  list-style-type:none;
+  list-style-type: none;
 }
+
 .clanImgContainer {
-  flex-grow:1;
-  flex-shrink:3;
+  flex-grow: 1;
+  flex-shrink: 3;
 }
+
 .clanImgContainer img {
-  max-width:120px;
-  height:auto;
+  max-width: 120px;
+  height: auto;
 }
+
 .clanList {
-  display:flex;
-  flex-flow:wrap;
-  width:100%;
-  gap:10px;
-  list-style-type:none;
-  column-gap:30px;
+  display: flex;
+  flex-flow: wrap;
+  width: 100%;
+  gap: 10px;
+  list-style-type: none;
+  column-gap: 30px;
+  background-color: black;
+  color: red;
+  font-size: calc(1rem + .5vw); 
+  font-weight:bold;
 }
