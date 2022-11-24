@@ -8,6 +8,10 @@ export const mentalSkills = { academics: 0, computer: 0, crafts: 0, investigatio
 
 export const socialSkills = { 'animal ken': 0, empathy: 0, expression: 0, intimidation: 0, persuasion: 0, socialize: 0, streetwise: 0, subterfuge: 0 }
 
+export const physicalAttributes = { strength: 0, dexterity: 0, stamina: 0 }
+export const socialAttributes = { charisma: 0, manipulation: 0, composure: 0 }
+export const mentalAttributes = { intelligence: 0, wits: 0, resolve: 0 }
+
 export const disciplinesByClan = {
   'Banu Haqim': ['Thaumaturgy', 'Celerity', 'Obfuscate'],
   Brujah: ['Celerity', 'Potence', 'Presence'],
