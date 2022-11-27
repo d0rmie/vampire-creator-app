@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectFirstName, selectLastName, selectClan, selectGeneration, selectSect, setSavedCharacters, selectSavedCharacters } from './charSlice'
+import { selectFirstName, selectLastName, selectClan, selectGeneration, selectSect, setSavedCharacters, selectSavedCharacters, selectSkillLimit, selectSkillLevel, selectAttributeLimit, selectAttributeLevel } from './charSlice'
 import { disciplinesByClan } from '../../data/data'
 import SavedCharacters from './SavedCharacters'
 import Attributes from './Attributes'
@@ -19,6 +19,10 @@ function Character () {
   const charDisciplines = disciplinesByClan[clan]
   const sect = useSelector(selectSect)
   const savedCharacters = useSelector(selectSavedCharacters)
+  const skillLimit = useSelector(selectSkillLimit)
+  const skillLevel = useSelector(selectSkillLevel)
+  const attributeLevel = useSelector(selectAttributeLevel)
+  const attributeLimit = useSelector(selectAttributeLimit)
 
   const onClickSave = () => {
     dispatch(setSavedCharacters())
@@ -35,14 +39,26 @@ function Character () {
             </div>
             <div>
                 <BasicInfo />
+                <ul>
+        <li>Attribute Dots Used: {attributeLevel === 21 ? attributeLevel + 1 : attributeLevel}</li>
+<li>Attribute Dots Available: {attributeLimit}</li>
+    </ul>
                 <Attributes />
+                <ul>
+                    <li>
+                        Skill Limit: {skillLimit}
+                    </li>
+                    <li>
+                        Skills Used: {skillLevel}
+                    </li>
+                </ul>
                 <Skills />
                 {charDisciplines && <Disciplines />}
             </div>
             <div>
                 <button onClick={onClickSave}>Save this character!</button>
             </div>
-            <Link to="/clans">Show the Clans!</Link>
+            <Link to={'/clans'}>Show the Clans!</Link>
             {savedCharacters && <SavedCharacters />}
         </div>
   )

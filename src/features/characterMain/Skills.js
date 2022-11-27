@@ -1,18 +1,23 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { socialSkills, mentalSkills, physicalSkills } from '../../data/data'
-import { setSkills, selectSkills } from './charSlice'
+import { setSkills, selectSkillLevel, selectSkillLimit } from './charSlice'
 
 function Skills () {
   const dispatch = useDispatch()
-  const skills = useSelector(selectSkills)
   const physSkillKeys = Object.keys(physicalSkills)
   const mentalSkillsKeys = Object.keys(mentalSkills)
   const socialSkillsKeys = Object.keys(socialSkills)
+  const skillLevel = useSelector(selectSkillLevel)
+  const skillLimit = useSelector(selectSkillLimit)
 
   const handleChangeSkill = (e) => {
+    if (skillLimit === skillLevel) {
+      alert('This is too many!')
+      e.target.value = e.target.value - 1
+    }
     dispatch(setSkills({ name: e.target.name, value: e.target.value }))
-    console.log(skills)
+    // console.log(skills)
   }
   return (
 <div className="skillHolder">

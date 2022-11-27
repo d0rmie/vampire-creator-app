@@ -1,15 +1,13 @@
 import React from 'react'
 import { clanList, disciplinesByClan } from '../../data/data'
-import { setClan, setDisciplines, selectClan } from './charSlice'
-import { useSelector, useDispatch } from 'react-redux'
+import { setClan, setDisciplines } from './charSlice'
+import { useDispatch } from 'react-redux'
 
 function Clans () {
   const dispatch = useDispatch()
-  const clan = useSelector(selectClan)
-  const charDisciplines = disciplinesByClan[clan]
   const clickClan = (e) => {
     dispatch(setClan(e.target.value))
-    dispatch(setDisciplines(charDisciplines))
+    dispatch(setDisciplines(disciplinesByClan[e.target.value]))
   }
   return (<div>
 <ul className="clanList">
